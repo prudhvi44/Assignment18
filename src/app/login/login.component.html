@@ -1,0 +1,142 @@
+<form [formGroup]="profileForm" (ngSubmit)="submit()">
+
+  <!-- <form action="action_page.php" method="post"> -->
+  
+  <div class="imgcontainer">
+  
+   
+  
+  </div>
+  
+    <div class="jumbotron text-center">
+  
+      <div class="container">
+  
+        <label for="username"><b>Username</b></label><br>
+  
+        <input type="text" placeholder="Enter Username" name="username" required formControlName = "username">
+  
+        <br>
+        <div *ngIf=" f['username'].touched" class="alert alert-danger">
+
+          <div *ngIf="f['username'].invalid">Username is required</div>
+    
+          </div>
+        
+  
+        <label for="password"><b>Password</b></label><br>
+        <div *ngIf=" f['password'].touched" class="alert alert-danger">
+
+          <div *ngIf="f['password'].invalid">Password is required</div>
+
+        </div>
+
+
+        <input type="password" placeholder="Enter Password" name="password" required formControlName = "password">
+  
+        <br>  
+
+  
+        <button type="submit">Login</button><br>
+      </div>
+
+ 
+
+      <div class="container" style="background-color:#f1f1f1">
+  
+        <button type="button" class="cancelbtn">Cancel</button>
+  
+        <span class="psw">Forgot <a href="">password?</a></span>
+  
+      </div>
+  
+    </div>
+  <table class="table">
+
+<!-- <tr *ngFor="let users of users ">
+
+
+
+  <td>{{users.id}}</td>&nbsp;
+
+  <td>{{users.username}}</td>&nbsp;
+
+  <td>{{users.password}}</td>&nbsp;
+
+  <button class="btn btn-danger" type="button" (click)="deleteUser(users.id )">Delete record</button><br>
+
+ </tr> -->
+
+</table>  
+  
+</form> 
+
+  <tr *ngFor="let homedata of users ">
+
+
+
+  <td>{{homedata.id}}</td>
+
+ 
+
+  <td>{{homedata.username}}</td>
+
+
+
+  <!--Change it,,,,-->
+</tr>
+
+
+
+<div *ngIf="number % 2 != 0; else showOdd">
+
+
+
+Even number {{ number|currency }}
+
+<h1>I'm exploring directives</h1>
+
+</div>
+
+
+
+<ng-template #showOdd>
+
+
+
+`Odd number {{ number|currency }}
+
+
+
+</ng-template>
+
+<button type="submit" (click)="deleteUser(users.id)">Delete</button>
+
+<button type="button"   class="cancelbtn">Display one record</button><br>
+
+<button type="button" (click)="getAllUsers()">getAllUsers</button><br>
+
+<h1 style="color:brown">{{prudhvi}}</h1>
+
+
+
+<table class="table">
+
+  <tr *ngFor="let users of users ">
+  
+  
+  
+    <td>{{users.id}}</td>&nbsp;
+  
+    <td>{{users.username}}</td>&nbsp;
+  
+    <td>{{users.password}}</td>&nbsp;
+  
+    <button class="btn btn-danger" type="button" (click)="deleteUser(users.id )">Delete record</button><br>
+  
+   </tr>
+  
+</table>  
+ 
+ 
+ 
